@@ -1,0 +1,89 @@
+version: '3.2'
+
+networks:
+
+  macvlan:
+    external:
+      name: vlan
+
+  bridge:
+
+services:
+  
+  unifi:
+    image: stlouisn/unifi
+    container_name: unifi
+    hostname: unifi
+    labels:
+      docker.unifi.description: "unifi wireless controller"
+      docker.unifi.url: "https://community.ubnt.com/"
+    environment:
+      - TZ=Someplace/Somewhere
+    command:
+      - '-Xmx1024m'
+    restart: always
+    volumes:
+      - ./unifi/config:/usr/lib/unifi/data:rw
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      macvlan:
+        ipv4_address: 123.123.123.123
+      bridge:
+    depends_on:
+      - mongo
+    links:
+      - mongo:mongo
+
+  mongo:
+    image: library/mongo
+    container_name: mongo
+    hostname: mongo
+    labels:
+      docker.mongo.description: "mongo database"
+      docker.mongo.url: "https://www.mongodb.com/"
+    environment:
+      - TZ=Someplace/Somewhere
+    command:
+      - '--smallfiles'
+      - '--storageEngine'
+      - 'wiredTiger'
+    restart: always
+    volumes:
+      - ./mongo/config:/data/configdb:rw
+      - ./mongo/data:/data/db:rw
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      bridge:
+
+  mongo-express:
+    image: library/mongo-express
+    container_name: mongo-express
+    hostname: mongo-express
+    labels:
+      docker.mongo-express.description: "mongo administration"
+      docker.mongo-express.url: "https://github.com/mongo-express/mongo-express"
+    environment:
+      - TZ=Someplace/Somewhere
+      - ME_CONFIG_MONGODB_SERVER=mongo
+    restart: always
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      bridge:
+    ports:
+      - 123.123.123.123:27018:8081
+    depends_on:
+      - mongo
+    links:
+      - mongo:mongo

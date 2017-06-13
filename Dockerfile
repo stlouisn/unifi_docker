@@ -1,7 +1,6 @@
 FROM alpine:latest
 
-ARG UNIFI_VERSION=5.5.11-5107276ec2
-#ARG UNIFI_VERSION=5.5.15-fc912fbd52 # will not adopt
+ARG UNIFI_VERSION=5.5.17-4f48295a02
 
 RUN \
 

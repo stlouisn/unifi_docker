@@ -6,29 +6,34 @@ RUN \
 
   # Install tzdata
   apk add \
-    --no-cache \
-    tzdata && \
+      --no-cache \
+      tzdata && \
 
   # Install SSL
   apk add \
-    --no-cache \
-    ca-certificates \
-    openssl && \
+      --no-cache \
+      ca-certificates \
+      openssl && \
 
   # Install curl
   apk add \
-    --no-cache \
-    curl && \
+      --no-cache \
+      curl && \
 
   # Install su-exec
   apk add \
-    --no-cache \
-    su-exec && \
+      --no-cache \
+      su-exec && \
 
   # Install java
   apk add \
-    --no-cache \
-    openjdk8-jre && \
+      --no-cache \
+      openjdk8-jre && \
+
+  # Install libc libraries
+  apk add \
+      --no-cache \
+      libc6-compat && \
 
   # Install unifi
   wget https://www.ubnt.com/downloads/unifi/${UNIFI_VERSION}/UniFi.unix.zip \

@@ -1,35 +1,39 @@
 FROM alpine:latest
 
-ARG UNIFI_VERSION=5.5.11-5107276ec2
-#ARG UNIFI_VERSION=5.5.15-fc912fbd52 # will not adopt
+ARG UNIFI_VERSION=5.5.17-4f48295a02
 
 RUN \
 
   # Install tzdata
   apk add \
-    --no-cache \
-    tzdata && \
+      --no-cache \
+      tzdata && \
 
   # Install SSL
   apk add \
-    --no-cache \
-    ca-certificates \
-    openssl && \
+      --no-cache \
+      ca-certificates \
+      openssl && \
 
   # Install curl
   apk add \
-    --no-cache \
-    curl && \
+      --no-cache \
+      curl && \
 
   # Install su-exec
   apk add \
-    --no-cache \
-    su-exec && \
+      --no-cache \
+      su-exec && \
 
   # Install java
   apk add \
-    --no-cache \
-    openjdk8-jre && \
+      --no-cache \
+      openjdk8-jre && \
+
+  # Install libc libraries
+  apk add \
+      --no-cache \
+      libc6-compat && \
 
   # Install unifi
   wget https://www.ubnt.com/downloads/unifi/${UNIFI_VERSION}/UniFi.unix.zip \

@@ -83,7 +83,7 @@ RUN \
   # Cleanup temporary folders
   rm -rf \
       /tmp/* \
-      /var/lib/apt/lists/* && \
+      /var/lib/apt/lists/*
 
 COPY rootfs /
 

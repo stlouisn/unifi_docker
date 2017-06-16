@@ -20,6 +20,12 @@ RUN \
   # Update apt-cache
   apt update && \
 
+  # Install tzdata
+  DEBIAN_FRONTEND=noninteractive \
+    apt install -y \
+    --no-install-recommends \
+      tzdata && \
+
   # Install gosu
   DEBIAN_FRONTEND=noninteractive \
     apt install -y \

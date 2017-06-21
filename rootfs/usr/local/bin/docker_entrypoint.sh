@@ -28,9 +28,15 @@ fi
 
 # Fix user and group ownerships
 chown -R root:root /usr/lib/unifi/data
+#chown -R unifi:unifi /usr/lib/unifi/data
 
 # Change workdir
 cd /usr/lib/unifi
 
 # Start unifi in console mode
 exec /usr/bin/java "$@" -Djava.awt.headless=true -jar /usr/lib/unifi/lib/ace.jar start
+#exec gosu unifi \
+#  /usr/bin/java \
+#    "$@" \
+#    -Djava.awt.headless=true \
+#    -jar /usr/lib/unifi/lib/ace.jar start

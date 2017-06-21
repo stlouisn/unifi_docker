@@ -94,7 +94,7 @@ RUN \
 
 ENV JAVA_HOME /usr/lib/jvm/default-java/jre
 
-EXPOSE 8080 8443
+EXPOSE 3478/udp 8080 8443 8843 8880
 
 VOLUME /usr/lib/unifi/data
 

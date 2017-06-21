@@ -68,13 +68,16 @@ RUN \
     wget https://www.ubnt.com/downloads/unifi/${UNIFI_VERSION}-${UNIFI_SHA}/UniFi.unix.zip -O /tmp/unifi.zip && \
     unzip /tmp/unifi.zip -d /tmp/ && \
     mv /tmp/UniFi /usr/lib/unifi && \
-
+    
     # Remove unnecessary files
     rm -rf \
         /usr/lib/unifi/bin \
         /usr/lib/unifi/lib/native/Linux/armhf \
         /usr/lib/unifi/lib/native/Mac \
         /usr/lib/unifi/lib/native/Windows && \
+
+#    # Fix user and group ownerships
+#    chown -R unifi:unifi /usr/lib/unifi && \
 
     # Remove build-tools
     apt purge -y \

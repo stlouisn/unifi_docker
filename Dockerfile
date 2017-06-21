@@ -76,7 +76,8 @@ RUN \
         /usr/lib/unifi/lib/native/Mac \
         /usr/lib/unifi/lib/native/Windows && \
 
-#    # Fix user and group ownerships
+    # Fix user and group ownerships
+    chown -R root:root /usr/lib/unifi && \
 #    chown -R unifi:unifi /usr/lib/unifi && \
 
     # Remove build-tools

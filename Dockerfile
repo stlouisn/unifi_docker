@@ -35,29 +35,29 @@ RUN \
         ca-certificates \
         openssl && \
 
-    # Install gosu
-    apt install -y --no-install-recommends \
-        gosu && \
+#    # Install gosu
+#    apt install -y --no-install-recommends \
+#        gosu && \
 
     # Install Java
     apt install -y --no-install-recommends \
     default-jre-headless && \
 
-    # Create unifi group
-    groupadd \
-        --system \
-        --gid 80000 \
-        unifi && \
+#    # Create unifi group
+#    groupadd \
+#        --system \
+#        --gid 80000 \
+#        unifi && \
 
-    # Create unifi user
-    useradd \
-        --system \
-        --no-create-home \
-        --shell /sbin/nologin \
-        --comment unifi \
-        --gid 80000 \
-        --uid 80000 \
-        unifi && \
+#    # Create unifi user
+#    useradd \
+#        --system \
+#        --no-create-home \
+#        --shell /sbin/nologin \
+#        --comment unifi \
+#        --gid 80000 \
+#        --uid 80000 \
+#        unifi && \
 
     # Install build-tools
     apt install -y --no-install-recommends \
@@ -94,7 +94,7 @@ RUN \
 
 ENV JAVA_HOME /usr/lib/jvm/default-java/jre
 
-EXPOSE 3478/udp 8080 8443 8843 8880
+EXPOSE 3478/udp 6789 8080 8443 8843 8880 10001/udp
 
 VOLUME /usr/lib/unifi/data
 

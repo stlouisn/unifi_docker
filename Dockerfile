@@ -41,7 +41,7 @@ RUN \
 
     # Install Java
     apt install -y --no-install-recommends \
-    default-jre-headless && \
+        default-jre-headless && \
 
 #    # Create unifi group
 #    groupadd \
@@ -61,8 +61,8 @@ RUN \
 
     # Install build-tools
     apt install -y --no-install-recommends \
-    unzip \
-    wget && \
+        unzip \
+        wget && \
       
     # Install unifi
     wget https://www.ubnt.com/downloads/unifi/${UNIFI_VERSION}-${UNIFI_SHA}/UniFi.unix.zip -O /tmp/unifi.zip && \
@@ -82,8 +82,8 @@ RUN \
 
     # Remove build-tools
     apt purge -y \
-    unzip \
-    wget && \
+        unzip \
+        wget && \
 
     # Set docker_entrypoint as executable
     chmod 0744 /usr/local/bin/docker_entrypoint.sh && \
@@ -93,8 +93,9 @@ RUN \
     apt autoclean -y && \
 
     # Cleanup temporary folders
-    rm -rf /tmp/* && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf \
+        /tmp/* \
+        /var/lib/apt/lists/*
 
 ENV JAVA_HOME /usr/lib/jvm/default-java/jre
 

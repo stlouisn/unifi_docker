@@ -94,6 +94,8 @@ RUN \
 
     # Cleanup temporary folders
     rm -rf \
+        /root/.cache \
+        /root/.wget-hsts \
         /tmp/* \
         /var/lib/apt/lists/*
 

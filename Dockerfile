@@ -35,29 +35,29 @@ RUN \
         ca-certificates \
         openssl && \
 
-#    # Install gosu
-#    apt install -y --no-install-recommends \
-#        gosu && \
+    # Install gosu
+    apt install -y --no-install-recommends \
+        gosu && \
 
     # Install Java
     apt install -y --no-install-recommends \
         default-jre-headless && \
 
-#    # Create unifi group
-#    groupadd \
-#        --system \
-#        --gid 80000 \
-#        unifi && \
+    # Create unifi group
+    groupadd \
+        --system \
+        --gid 80000 \
+        unifi && \
 
-#    # Create unifi user
-#    useradd \
-#        --system \
-#        --no-create-home \
-#        --shell /sbin/nologin \
-#        --comment unifi \
-#        --gid 80000 \
-#        --uid 80000 \
-#        unifi && \
+    # Create unifi user
+    useradd \
+        --system \
+        --no-create-home \
+        --shell /sbin/nologin \
+        --comment unifi \
+        --gid 80000 \
+        --uid 80000 \
+        unifi && \
 
     # Install build-tools
     apt install -y --no-install-recommends \
@@ -77,8 +77,7 @@ RUN \
         /usr/lib/unifi/lib/native/Windows && \
 
     # Fix user and group ownerships
-    chown -R root:root /usr/lib/unifi && \
-#    chown -R unifi:unifi /usr/lib/unifi && \
+    chown -R unifi:unifi /usr/lib/unifi && \
 
     # Remove build-tools
     apt purge -y \

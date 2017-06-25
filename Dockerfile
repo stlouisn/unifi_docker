@@ -14,7 +14,7 @@ LABEL org.label-schema.build-date=${BUILD_DATE} \
       org.label-schema.url="https://community.ubnt.com/" \
       org.label-schema.vcs-ref=${VCS_REF} \
       org.label-schema.vcs-url="https://github.com/stlouisn/unifi_docker" \
-      org.label-schema.vendor="stlouisn"
+      org.label-schema.vendor="stlouisn" \
       org.label-schema.version=${UNIFI_VERSION}
 
 COPY rootfs /

@@ -1,7 +1,5 @@
 FROM ubuntu:rolling
 
-MAINTAINER stlouisn
-
 ARG UNIFI_VERSION=5.5.17
 ARG UNIFI_SHA=4f48295a02
 
@@ -10,11 +8,13 @@ ARG VCS_REF
 
 LABEL org.label-schema.build-date=${BUILD_DATE} \
       org.label-schema.description="Wireless Controller" \
+      #org.label-schema.docker.cmd="" \
       org.label-schema.name="Unifi" \
       org.label-schema.schema-version="1.0" \
       org.label-schema.url="https://community.ubnt.com/" \
       org.label-schema.vcs-ref=${VCS_REF} \
       org.label-schema.vcs-url="https://github.com/stlouisn/unifi_docker" \
+      org.label-schema.vendor="stlouisn"
       org.label-schema.version=${UNIFI_VERSION}
 
 COPY rootfs /
@@ -76,7 +76,6 @@ RUN \
         /usr/lib/unifi/lib/native/Linux/armhf \
         /usr/lib/unifi/lib/native/Mac \
         /usr/lib/unifi/lib/native/Windows && \
-
 
     # Remove build-tools
     apt purge -y \

@@ -96,8 +96,9 @@ RUN \
         /tmp/* \
         /var/lib/apt/lists/*
 
-ENV JAVA_HOME /usr/lib/jvm/default-java/jre
-
+ENV JAVA_HOME=/usr/lib/jvm/default-java/jre \
+    LC_ALL=C.UTF-8
+    
 EXPOSE 3478/udp 6789 8080 8443 8843 8880 10001/udp
 
 VOLUME /usr/lib/unifi/data

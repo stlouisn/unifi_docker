@@ -12,4 +12,4 @@
 
 ### Links
 
-[ubnt.com](https://community.ubnt.com/unifi/)
+https://community.ubnt.com/unifi/

@@ -1,14 +1,13 @@
 FROM ubuntu:rolling
 
-ARG UNIFI_VERSION=5.5.17
-ARG UNIFI_SHA=4f48295a02
+ARG UNIFI_VERSION=5.5.19
+ARG UNIFI_SHA=e1f8f0efe7
 
 ARG BUILD_DATE
 ARG VCS_REF
 
 LABEL org.label-schema.build-date=${BUILD_DATE} \
       org.label-schema.description="Wireless Controller" \
-      #org.label-schema.docker.cmd="" \
       org.label-schema.name="Unifi" \
       org.label-schema.schema-version="1.0" \
       org.label-schema.url="https://community.ubnt.com/" \

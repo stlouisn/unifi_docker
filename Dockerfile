@@ -1,5 +1,6 @@
 FROM ubuntu:rolling
 
+# https://community.ubnt.com/t5/UniFi-Wireless-Beta/bd-p/UniFi_Beta
 ARG UNIFI_VERSION=5.5.19
 ARG UNIFI_SHA=e1f8f0efe7
 

@@ -3,8 +3,8 @@ dist: trusty
 sudo: required
 
 before_install:
-  - sudo apt-get update
-  - sudo apt-get upgrade -y
+  - sudo apt-get update -q
+  - sudo apt-get upgrade -q -y
   - docker version
   - if [ "${TRAVIS_BRANCH}" == "master" ]; then
       export DOCKER_TAG="latest";
@@ -13,13 +13,24 @@ before_install:
     fi
 
 install:
-  - docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` --build-arg VCS_REF=`git rev-parse --short HEAD` -t ${DOCKER_USERNAME}/${DOCKER_IMAGE}:${DOCKER_TAG} .
+  - >
+    docker build
+    --label org.label-schema.build-date=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
+    --label org.label-schema.build-number=${TRAVIS_BUILD_NUMBER}
+    --label org.label-schema.schema-version="1.0"
+    --label org.label-schema.vcs-ref=`git rev-parse --short HEAD`
+    --label org.label-schema.vcs-url=`git remote get-url origin | head -c-5`
+    --label org.label-schema.vendor="stlouisn"
+    --tag ${DOCKER_USERNAME}/${DOCKER_IMAGE}:${DOCKER_TAG} .
 
 after_success:
-  - docker login --username ${DOCKER_USERNAME} --password ${DOCKER_PASSWORD}
+  - >
+    docker login
+    --username ${DOCKER_USERNAME}
+    --password ${DOCKER_PASSWORD}
   - docker push ${DOCKER_USERNAME}/${DOCKER_IMAGE}:${DOCKER_TAG}
 
 notifications:
   email:
-    on_success: change
+    on_success: never
     on_failure: change

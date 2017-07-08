@@ -35,6 +35,6 @@ cd /usr/lib/unifi
 # Start unifi in console mode
 exec gosu unifi \
     /usr/bin/java \
-        "$@" \
+        -Xmx1024m \
         -Djava.awt.headless=true \
         -jar /usr/lib/unifi/lib/ace.jar start

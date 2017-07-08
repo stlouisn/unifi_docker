@@ -1,0 +1,40 @@
+version: '2.2'
+
+  unifi:
+    image: stlouisn/unifi
+    container_name: unifi
+    hostname: unifi
+    environment:
+      - TZ=America/Halifax
+    restart: always
+    volumes:
+      - ./unifi/config:/usr/lib/unifi/data:rw
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    depends_on:
+      - mongo
+    links:
+      - mongo:mongo
+
+ mongo:
+    image: library/mongo
+    container_name: mongo
+    hostname: mongo
+    environment:
+      - TZ=America/Halifax
+    command:
+      - '--smallfiles'
+      - '--storageEngine'
+      - 'wiredTiger'
+    restart: always
+    volumes:
+      - ./mongo/config:/data/configdb:rw
+      - ./mongo/data:/data/db:rw
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

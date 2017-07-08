@@ -1,19 +1,10 @@
 FROM ubuntu:rolling
 
 ARG UNIFI_VERSION=5.5.19
-ARG UNIFI_SHA=e1f8f0efe7
 
-ARG BUILD_DATE
-ARG VCS_REF
-
-LABEL org.label-schema.build-date=${BUILD_DATE} \
-      org.label-schema.description="Wireless Controller" \
+LABEL org.label-schema.description="Wireless Controller" \
       org.label-schema.name="Unifi" \
-      org.label-schema.schema-version="1.0" \
       org.label-schema.url="https://community.ubnt.com/" \
-      org.label-schema.vcs-ref=${VCS_REF} \
-      org.label-schema.vcs-url="https://github.com/stlouisn/unifi_docker" \
-      org.label-schema.vendor="stlouisn" \
       org.label-schema.version=${UNIFI_VERSION}
 
 COPY rootfs /
@@ -64,7 +55,8 @@ RUN \
         wget && \
       
     # Install unifi
-    wget https://www.ubnt.com/downloads/unifi/${UNIFI_VERSION}-${UNIFI_SHA}/UniFi.unix.zip -O /tmp/unifi.zip && \
+    wget https://www.ubnt.com/downloads/unifi/${UNIFI_VERSION}/UniFi.unix.zip \
+        -O /tmp/unifi.zip && \
     unzip /tmp/unifi.zip -d /tmp/ && \
     mv /tmp/UniFi /usr/lib/unifi && \
     chown -R unifi:unifi /usr/lib/unifi && \
@@ -98,7 +90,10 @@ RUN \
 ENV JAVA_HOME=/usr/lib/jvm/default-java/jre \
     LC_ALL=C.UTF-8
     
-EXPOSE 3478/udp 6789 8080 8443 8843 8880 10001/udp
+EXPOSE 8080 \
+       8443 \
+       8843 \
+       8880
 
 VOLUME /usr/lib/unifi/data
 

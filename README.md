@@ -2,13 +2,10 @@
 
 *Wireless Controller*
 
-### Docker Image
-
-[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi.svg)](https://microbadger.com/images/stlouisn/unifi "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/commit/stlouisn/unifi.svg)](https://microbadger.com/images/stlouisn/unifi "Get your own commit badge on microbadger.com") [![ImageLayers.io](https://images.microbadger.com/badges/image/stlouisn/unifi.svg)](https://microbadger.com/images/stlouisn/unifi "Get your own image badge on microbadger.com")
-
-### Build
-
-[![Build Status](https://travis-ci.org/stlouisn/unifi_docker.svg?branch=master)](https://travis-ci.org/stlouisn/unifi_docker)
+[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi.svg)](https://microbadger.com/images/stlouisn/unifi)
+[![Commit](https://images.microbadger.com/badges/commit/stlouisn/unifi.svg)](https://microbadger.com/images/stlouisn/unifi)
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi.svg)](https://microbadger.com/images/stlouisn/unifi)
+[![Build](https://travis-ci.org/stlouisn/unifi_docker.svg?branch=master)](https://travis-ci.org/stlouisn/unifi_docker)
 
 ### Links
 

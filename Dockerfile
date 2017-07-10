@@ -18,6 +18,10 @@ RUN \
         ca-certificates \
         openssl && \
 
+    # Install curl
+    apt install -y --no-install-recommends \
+        curl && \
+
     # Install gosu
     apt install -y --no-install-recommends \
         gosu && \
@@ -40,9 +44,7 @@ RUN \
 
     # Install build-tools
     apt install -y --no-install-recommends \
-        curl \
-        unzip \
-        wget && \
+        unzip && \
 
     # Install Java
     apt install -y --no-install-recommends \
@@ -51,8 +53,7 @@ RUN \
     export UNIFI_VERSION=`curl -sSL https://raw.githubusercontent.com/stlouisn/unifi_docker/master/docker.labels/version | bash` && \
 
     # Install unifi
-    wget https://www.ubnt.com/downloads/unifi/${UNIFI_VERSION}/UniFi.unix.zip \
-        -O /tmp/unifi.zip && \
+    curl -SL https://www.ubnt.com/downloads/unifi/${UNIFI_VERSION}/UniFi.unix.zip -o /tmp/unifi.zip && \
     unzip /tmp/unifi.zip -d /tmp/ && \
     mv /tmp/UniFi /usr/lib/unifi && \
     chown -R unifi:unifi /usr/lib/unifi && \
@@ -66,9 +67,7 @@ RUN \
 
     # Remove build-tools
     apt purge -y \
-        curl \
-        unzip \
-        wget && \
+        unzip && \
 
     # Set docker_entrypoint as executable
     chmod 0744 /usr/local/bin/docker_entrypoint.sh && \
@@ -84,8 +83,7 @@ RUN \
         /tmp/* \
         /var/lib/apt/lists/*
 
-ENV JAVA_HOME=/usr/lib/jvm/default-java/jre \
-    LC_ALL=C.UTF-8
+ENV JAVA_HOME=/usr/lib/jvm/default-java/jre
     
 VOLUME /usr/lib/unifi/data
 

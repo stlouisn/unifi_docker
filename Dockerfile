@@ -4,8 +4,6 @@ COPY docker.rootfs /
 
 RUN \
 
-    export UNIFI_VERSION=5.5.19 && \
-
     export DEBIAN_FRONTEND=noninteractive && \
 
     # Update apt-cache
@@ -23,10 +21,6 @@ RUN \
     # Install gosu
     apt install -y --no-install-recommends \
         gosu && \
-
-    # Install Java
-    apt install -y --no-install-recommends \
-        default-jre-headless && \
 
     # Create unifi group
     groupadd \
@@ -46,9 +40,16 @@ RUN \
 
     # Install build-tools
     apt install -y --no-install-recommends \
+        curl \
         unzip \
         wget && \
-      
+
+    # Install Java
+    apt install -y --no-install-recommends \
+        default-jre-headless && \
+
+    export UNIFI_VERSION=`curl -sSL https://raw.githubusercontent.com/stlouisn/unifi_docker/master/docker.labels/version | bash` && \
+
     # Install unifi
     wget https://www.ubnt.com/downloads/unifi/${UNIFI_VERSION}/UniFi.unix.zip \
         -O /tmp/unifi.zip && \
@@ -65,6 +66,7 @@ RUN \
 
     # Remove build-tools
     apt purge -y \
+        curl \
         unzip \
         wget && \
 

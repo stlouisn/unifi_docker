@@ -1,5 +1,7 @@
 version: '2.2'
 
+services:
+
   unifi:
     image: stlouisn/unifi
     container_name: unifi

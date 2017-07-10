@@ -1,15 +1,10 @@
 FROM ubuntu:rolling
 
-ARG UNIFI_VERSION=5.5.19
-
-LABEL org.label-schema.description="Wireless Controller" \
-      org.label-schema.name="Unifi" \
-      org.label-schema.url="https://community.ubnt.com/" \
-      org.label-schema.version=${UNIFI_VERSION}
-
-COPY rootfs /
+COPY docker.rootfs /
 
 RUN \
+
+    export UNIFI_VERSION=5.5.19 && \
 
     export DEBIAN_FRONTEND=noninteractive && \
 

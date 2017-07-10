@@ -87,11 +87,6 @@ RUN \
 ENV JAVA_HOME=/usr/lib/jvm/default-java/jre \
     LC_ALL=C.UTF-8
     
-EXPOSE 8080 \
-       8443 \
-       8843 \
-       8880
-
 VOLUME /usr/lib/unifi/data
 
 ENTRYPOINT ["/usr/local/bin/docker_entrypoint.sh"]

@@ -1,1 +1,3 @@
-Wireless Controller
+#!/bin/bash
+
+echo "Wireless Controller"

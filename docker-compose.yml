@@ -13,6 +13,11 @@ services:
       - mongo
     links:
       - mongo:mongo
+    ports:
+      - 8080
+      - 8043
+      - 8843
+      - 8880
 
  mongo:
     image: library/mongo
@@ -26,3 +31,5 @@ services:
     volumes:
       - ./mongo/config:/data/configdb:rw
       - ./mongo/data:/data/db:rw
+    expose:
+      - 27017

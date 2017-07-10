@@ -6,6 +6,9 @@ services:
     image: stlouisn/unifi
     container_name: unifi
     hostname: unifi
+    environment:
+      - TZ=UTC
+      - LC_ALL=C-UTF-8
     restart: always
     volumes:
       - ./unifi/config:/usr/lib/unifi/data:rw

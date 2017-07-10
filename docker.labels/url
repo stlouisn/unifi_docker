@@ -1,1 +1,3 @@
-https://community.ubnt.com/unifi
+#!/bin/bash
+
+echo "https://community.ubnt.com/unifi"

@@ -6,7 +6,7 @@ before_install:
   - sudo apt-get update -q
   - sudo apt-get upgrade -q -y
   - docker version
-  - sudo chmod +x docker/labels/*
+  - sudo chmod +x docker.labels/*
 
 install:
   - export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`

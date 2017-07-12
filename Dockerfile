@@ -42,7 +42,7 @@ RUN \
         --uid 80000 \
         unifi && \
 
-    # Install build-tools
+    # Install temporary-tools
     apt install -y --no-install-recommends \
         unzip && \
 
@@ -65,7 +65,7 @@ RUN \
         /usr/lib/unifi/lib/native/Mac \
         /usr/lib/unifi/lib/native/Windows && \
 
-    # Remove build-tools
+    # Remove temporary-tools
     apt purge -y \
         unzip && \
 

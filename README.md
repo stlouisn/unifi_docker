@@ -7,6 +7,10 @@
 [![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi.svg)](https://microbadger.com/images/stlouisn/unifi)
 [![Build](https://travis-ci.org/stlouisn/unifi_docker.svg?branch=master)](https://travis-ci.org/stlouisn/unifi_docker)
 
+### Feature Roadmap
+
+- Implement self-signed SSL certificate
+
 ### Links
 
 https://community.ubnt.com/unifi/

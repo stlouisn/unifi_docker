@@ -50,7 +50,7 @@ RUN \
     apt install -y --no-install-recommends \
         default-jre-headless && \
 
-    export UNIFI_VERSION=`cat /version` && \
+    export UNIFI_VERSION=`cat /unifi_version` && \
 
     # Install unifi
     curl -SL https://www.ubnt.com/downloads/unifi/${UNIFI_VERSION}/UniFi.unix.zip -o /tmp/unifi.zip && \

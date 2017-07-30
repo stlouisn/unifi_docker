@@ -12,7 +12,6 @@ services:
     restart: always
     volumes:
       - ./unifi/config:/usr/lib/unifi/data:rw
-      - ./unifi/logs:/usr/lib/unifi/logs:rw
     depends_on:
       - mongo
     links:

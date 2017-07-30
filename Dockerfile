@@ -29,7 +29,7 @@ RUN \
     # Create unifi group
     groupadd \
         --system \
-        --gid 80000 \
+        --gid 9999 \
         unifi && \
 
     # Create unifi user
@@ -38,8 +38,8 @@ RUN \
         --no-create-home \
         --shell /sbin/nologin \
         --comment unifi \
-        --gid 80000 \
-        --uid 80000 \
+        --gid 9999 \
+        --uid 9999 \
         unifi && \
 
     # Install temporary-tools
@@ -86,7 +86,6 @@ RUN \
 
 ENV JAVA_HOME=/usr/lib/jvm/default-java/jre
     
-VOLUME /usr/lib/unifi/data \
-       /usr/lib/unifi/logs
+VOLUME /usr/lib/unifi/data
 
 ENTRYPOINT ["/usr/local/bin/docker_entrypoint.sh"]

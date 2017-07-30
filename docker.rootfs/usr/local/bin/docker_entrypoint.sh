@@ -10,6 +10,10 @@ if [ ! -d /usr/lib/unifi/data ]; then
     printf "\nERROR: volume /usr/lib/unifi/data not mounted.\n" >&2
     exit 1
 fi
+if [ ! -d /usr/lib/unifi/logs ]; then
+    printf "\nERROR: volume /usr/lib/unifi/logs not mounted.\n" >&2
+    exit 1
+fi
 
 # Copy default system.properties file
 if [ ! -e /usr/lib/unifi/data/system.properties ]; then
@@ -28,13 +32,13 @@ fi
 
 # Fix user and group ownerships
 chown -R unifi:unifi /usr/lib/unifi/data
+chown -R unifi:unifi /usr/lib/unifi/logs
 
 # Change workdir
 cd /usr/lib/unifi
 
 # Start unifi in console mode
-exec gosu unifi \
-    /usr/bin/java \
-        -Xmx1024m \
-        -Djava.awt.headless=true \
-        -jar /usr/lib/unifi/lib/ace.jar start
+exec gosu unifi /usr/bin/java \
+    -Xmx1024m \
+    -Djava.awt.headless=true \
+    -jar /usr/lib/unifi/lib/ace.jar start

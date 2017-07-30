@@ -63,7 +63,8 @@ RUN \
         /usr/lib/unifi/bin \
         /usr/lib/unifi/lib/native/Linux/armhf \
         /usr/lib/unifi/lib/native/Mac \
-        /usr/lib/unifi/lib/native/Windows && \
+        /usr/lib/unifi/lib/native/Windows \
+        /usr/lib/unifi/readme.txt && \
 
     # Remove temporary-tools
     apt purge -y \
@@ -85,6 +86,7 @@ RUN \
 
 ENV JAVA_HOME=/usr/lib/jvm/default-java/jre
     
-VOLUME /usr/lib/unifi/data
+VOLUME /usr/lib/unifi/data \
+       /usr/lib/unifi/logs
 
 ENTRYPOINT ["/usr/local/bin/docker_entrypoint.sh"]

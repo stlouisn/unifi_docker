@@ -32,7 +32,9 @@ fi
 
 # Fix user and group ownerships
 chown -R unifi:unifi /usr/lib/unifi/data
+chmod 0755 /usr/lib/unifi/data
 chown -R unifi:unifi /usr/lib/unifi/logs
+chmod 0755 /usr/lib/unifi/logs
 
 # Change workdir
 cd /usr/lib/unifi

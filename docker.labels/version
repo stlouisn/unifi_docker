@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # STABLE_CANDIDATE RELEASE
-echo "5.5.20-1ca8f95c98"
+echo "5.5.21-db0bc7e126"

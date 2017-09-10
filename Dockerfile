@@ -53,7 +53,7 @@ RUN \
     export UNIFI_VERSION=`cat /unifi_version` && \
 
     # Install unifi
-    curl -SL https://www.ubnt.com/downloads/unifi/${UNIFI_VERSION}/UniFi.unix.zip -o /tmp/unifi.zip && \
+    curl -SL https://dl.ubnt.com/unifi/${UNIFI_VERSION}/UniFi.unix.zip -o /tmp/unifi.zip && \
     unzip /tmp/unifi.zip -d /tmp/ && \
     mv /tmp/UniFi /usr/lib/unifi && \
     chown -R unifi:unifi /usr/lib/unifi && \

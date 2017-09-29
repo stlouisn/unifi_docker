@@ -57,7 +57,7 @@ RUN \
     unzip /tmp/unifi.zip -d /tmp/ && \
     mv /tmp/UniFi /usr/lib/unifi && \
     chown -R unifi:unifi /usr/lib/unifi && \
-    
+
     # Remove unnecessary files
     rm -rf \
         /usr/lib/unifi/bin \
@@ -82,7 +82,7 @@ RUN \
         /var/lib/apt/lists/*
 
 ENV JAVA_HOME=/usr/lib/jvm/default-java/jre
-    
+
 VOLUME /usr/lib/unifi/data
 
 ENTRYPOINT ["/usr/local/bin/docker_entrypoint.sh"]

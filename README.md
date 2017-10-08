@@ -3,7 +3,7 @@
 *Wireless Controller*
 
 [![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:latest.svg)](https://microbadger.com/images/stlouisn/unifi:latest)
-[![Commit]]
+[![Commit](https://images.microbadger.com/badges/commit/stlouisn/unifi:latest.svg)](https://microbadger.com/images/stlouisn/unifi:latest)
 [![Build](https://travis-ci.org/stlouisn/unifi_docker.svg?branch=master)](https://travis-ci.org/stlouisn/unifi_docker)
 
 

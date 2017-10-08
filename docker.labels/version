@@ -1,4 +1,0 @@
-#!/bin/bash
-
-# STABLE_CANDIDATE RELEASE
-echo "5.6.18-8261dc5066"

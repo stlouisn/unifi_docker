@@ -21,15 +21,15 @@ env:
     - DOCKER_RELEASE=LTS
       DOCKER_BRANCH=5.4.x
       DOCKER_VERSION=5.4.18
-      DOWNLOAD_URL=https://dl.ubnt.com/unifi/5.4.18/UniFi.unix.zip
+      UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.4.18/UniFi.unix.zip
     - DOCKER_RELEASE=STABLE
       DOCKER_BRANCH=5.5.x
       DOCKER_VERSION=5.5.24
-      DOWNLOAD_URL=https://dl.ubnt.com/unifi/5.5.24/UniFi.unix.zip
+      UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.5.24/UniFi.unix.zip
     - DOCKER_RELEASE=LATEST
       DOCKER_BRANCH=5.6.x
       DOCKER_VERSION=5.6.18
-      DOWNLOAD_URL=https://dl.ubnt.com/unifi/5.6.18-8261dc5066/UniFi.unix.zip
+      UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.6.18-8261dc5066/UniFi.unix.zip
 
 before_install:
   - sudo apt-get update -q
@@ -45,7 +45,7 @@ before_script:
 script:
   - >
     docker build
-    --build-arg DOWNLOAD_URL="${DOWNLOAD_URL}"
+    --build-arg UNIFI_DOWNLOAD="${UNIFI_DOWNLOAD}"
     --label org.label-schema.build-date="${BUILD_DATE}"
     --label org.label-schema.build-number="${BUILD_NUMBER}"
     --label org.label-schema.description="${DOCKER_DESCRIPTION}"

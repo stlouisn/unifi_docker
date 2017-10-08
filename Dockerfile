@@ -2,7 +2,7 @@ FROM ubuntu:rolling
 
 COPY rootfs /
 
-ARG BUILD_DATE
+ARG UNIFI_DOWNLOAD
 
 RUN \
 
@@ -53,7 +53,7 @@ RUN \
         default-jre-headless && \
 
     # Install unifi
-    curl -SL ${DOWNLOAD_URL} -o /tmp/unifi.zip && \
+    curl -SL $UNIFI_DOWNLOAD -o /tmp/unifi.zip && \
     unzip /tmp/unifi.zip -d /tmp/ && \
     mv /tmp/UniFi /usr/lib/unifi && \
     chown -R unifi:unifi /usr/lib/unifi && \

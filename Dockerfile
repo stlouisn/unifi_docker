@@ -2,28 +2,30 @@ FROM ubuntu:rolling
 
 COPY rootfs /
 
+ARG BUILD_DATE
+
 RUN \
 
     export DEBIAN_FRONTEND=noninteractive && \
 
     # Update apt-cache
-    apt update && \
+    apt-get update && \
 
     # Install tzdata
-    apt install -y --no-install-recommends \
+    apt-get install -y --no-install-recommends \
         tzdata && \
 
     # Install SSL
-    apt install -y --no-install-recommends \
+    apt-get install -y --no-install-recommends \
         ca-certificates \
         openssl && \
 
     # Install curl
-    apt install -y --no-install-recommends \
+    apt-get install -y --no-install-recommends \
         curl && \
 
     # Install gosu
-    apt install -y --no-install-recommends \
+    apt-get install -y --no-install-recommends \
         gosu && \
 
     # Create unifi group
@@ -43,11 +45,11 @@ RUN \
         unifi && \
 
     # Install temporary-tools
-    apt install -y --no-install-recommends \
+    apt-get install -y --no-install-recommends \
         unzip && \
 
     # Install Java
-    apt install -y --no-install-recommends \
+    apt-get install -y --no-install-recommends \
         default-jre-headless && \
 
     # Install unifi
@@ -65,12 +67,12 @@ RUN \
         /usr/lib/unifi/readme.txt && \
 
     # Remove temporary-tools
-    apt purge -y \
+    apt-get purge -y \
         unzip && \
 
     # Clean apt-cache
-    apt autoremove -y --purge && \
-    apt autoclean -y && \
+    apt-get autoremove -y --purge && \
+    apt-get autoclean -y && \
 
     # Cleanup temporary folders
     rm -rf \

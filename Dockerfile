@@ -1,6 +1,6 @@
 FROM ubuntu:rolling
 
-COPY docker.rootfs /
+COPY rootfs /
 
 RUN \
 
@@ -50,10 +50,8 @@ RUN \
     apt install -y --no-install-recommends \
         default-jre-headless && \
 
-    export UNIFI_VERSION=`cat /unifi_version` && \
-
     # Install unifi
-    curl -SL https://dl.ubnt.com/unifi/${UNIFI_VERSION}/UniFi.unix.zip -o /tmp/unifi.zip && \
+    curl -SL ${DOWNLOAD_URL} -o /tmp/unifi.zip && \
     unzip /tmp/unifi.zip -d /tmp/ && \
     mv /tmp/UniFi /usr/lib/unifi && \
     chown -R unifi:unifi /usr/lib/unifi && \

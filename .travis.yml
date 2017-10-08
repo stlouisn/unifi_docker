@@ -18,15 +18,15 @@ env:
     - VCS_REF="`git rev-parse --short HEAD`"
     - VCS_URL="`git remote get-url origin | head -c-5`"
   matrix:
-    - DOCKER_RELEASE=LTS
+    - DOCKER_RELEASE=lts
       DOCKER_BRANCH=5.4.x
       DOCKER_VERSION=5.4.18
       UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.4.18/UniFi.unix.zip
-    - DOCKER_RELEASE=STABLE
+    - DOCKER_RELEASE=stable
       DOCKER_BRANCH=5.5.x
       DOCKER_VERSION=5.5.24
       UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.5.24/UniFi.unix.zip
-    - DOCKER_RELEASE=LATEST
+    - DOCKER_RELEASE=latest
       DOCKER_BRANCH=5.6.x
       DOCKER_VERSION=5.6.18
       UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.6.18-8261dc5066/UniFi.unix.zip
@@ -63,6 +63,7 @@ script:
 after_success:
   - echo ${DOCKER_PASSWORD} | docker login --username ${DOCKER_USERNAME} --password-stdin
   - docker push ${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_RELEASE}
+  - docker push ${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_BRANCH}
 
 notifications:
   email:

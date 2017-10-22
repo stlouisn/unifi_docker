@@ -21,7 +21,7 @@ env:
     - DOCKER_RELEASE=latest
       DOCKER_BRANCH=5.6.x
       DOCKER_VERSION=5.6.19
-      UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.6.18-8261dc5066/UniFi.unix.zip
+      UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.6.19-17e4cda571/UniFi.unix.zip
     - DOCKER_RELEASE=stable
       DOCKER_BRANCH=5.5.x
       DOCKER_VERSION=5.5.24

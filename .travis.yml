@@ -26,10 +26,27 @@ env:
       DOCKER_BRANCH=5.5.x
       DOCKER_VERSION=5.5.24
       UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.5.24/UniFi.unix.zip
-    - DOCKER_RELEASE=LTS
-      DOCKER_BRANCH=5.4.x
-      DOCKER_VERSION=5.4.18
-      UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.4.18/UniFi.unix.zip
+
+
+  matrix:
+    - DOCKER_BRANCH=latest
+      DOCKER_VERSION=5.6.24
+      UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.6.24-e2998a5aab/UniFi.unix.zip
+    - DOCKER_BRANCH=stable
+      DOCKER_VERSION=5.6.22
+      UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.6.22/UniFi.unix.zip
+    - DOCKER_BRANCH=5.4.x
+      DOCKER_VERSION=5.4.19
+      UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.4.19/UniFi.unix.zip
+    - DOCKER_BRANCH=5.5.x
+      DOCKER_VERSION=5.5.27
+      UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.5.27-b56dba9184/UniFi.unix.zip
+    - DOCKER_BRANCH=5.6.x
+      DOCKER_VERSION=5.6.24
+      UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.6.24-e2998a5aab/UniFi.unix.zip
+    - DOCKER_BRANCH=5.7.x
+      DOCKER_VERSION=5.7.8
+      UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.7.8-5204056bce/UniFi.unix.zip
 
 before_install:
   - sudo apt-get update -q
@@ -56,13 +73,11 @@ script:
     --label org.label-schema.vcs-ref="${VCS_REF}"
     --label org.label-schema.vcs-url="${VCS_URL}"
     --label org.label-schema.version="${DOCKER_VERSION}"
-    --tag ${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_RELEASE}
     --tag ${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_BRANCH}
     --pull .
 
 after_success:
   - echo ${DOCKER_PASSWORD} | docker login --username ${DOCKER_USERNAME} --password-stdin
-  - docker push ${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_RELEASE}
   - docker push ${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_BRANCH}
 
 notifications:

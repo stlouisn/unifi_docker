@@ -7,6 +7,9 @@
 [![Build](https://travis-ci.org/stlouisn/unifi_docker.svg?branch=master)](https://travis-ci.org/stlouisn/unifi_docker)
 
 
+[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.7.x.svg)](https://microbadger.com/images/stlouisn/unifi:5.7.x)
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.7.x.svg)](https://microbadger.com/images/stlouisn/unifi:5.7.x)
+
 [![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.6.x.svg)](https://microbadger.com/images/stlouisn/unifi:5.6.x)
 [![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.6.x.svg)](https://microbadger.com/images/stlouisn/unifi:5.6.x)
 

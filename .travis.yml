@@ -18,17 +18,6 @@ env:
     - VCS_REF="`git rev-parse --short HEAD`"
     - VCS_URL="`git remote get-url origin | head -c-5`"
   matrix:
-    - DOCKER_RELEASE=latest
-      DOCKER_BRANCH=5.6.x
-      DOCKER_VERSION=5.6.19
-      UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.6.19-17e4cda571/UniFi.unix.zip
-    - DOCKER_RELEASE=stable
-      DOCKER_BRANCH=5.5.x
-      DOCKER_VERSION=5.5.24
-      UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.5.24/UniFi.unix.zip
-
-
-  matrix:
     - DOCKER_BRANCH=latest
       DOCKER_VERSION=5.6.24
       UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.6.24-e2998a5aab/UniFi.unix.zip
@@ -42,11 +31,11 @@ env:
       DOCKER_VERSION=5.5.27
       UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.5.27-b56dba9184/UniFi.unix.zip
     - DOCKER_BRANCH=5.6.x
-      DOCKER_VERSION=5.6.24
-      UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.6.24-e2998a5aab/UniFi.unix.zip
+      DOCKER_VERSION=5.6.26
+      UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.6.26-f6a8a26e43/UniFi.unix.zip
     - DOCKER_BRANCH=5.7.x
-      DOCKER_VERSION=5.7.8
-      UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.7.8-5204056bce/UniFi.unix.zip
+      DOCKER_VERSION=5.7.9
+      UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.7.9-370a11ebe6/UniFi.unix.zip
 
 before_install:
   - sudo apt-get update -q

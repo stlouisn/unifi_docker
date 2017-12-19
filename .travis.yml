@@ -19,11 +19,9 @@ env:
     - VCS_URL="`git remote get-url origin | head -c-5`"
   matrix:
     - DOCKER_BRANCH=latest
-      #stable-candidate
       DOCKER_VERSION=5.6.29
       UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.6.29-445c8ce6c7/UniFi.unix.zip
     - DOCKER_BRANCH=stable
-      #stable-release
       DOCKER_VERSION=5.6.26
       UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.6.26/UniFi.unix.zip
     - DOCKER_BRANCH=5.4.x

@@ -1,14 +1,10 @@
-version: '2.2'
+version: '2.3'
 
 services:
 
   unifi:
     image: stlouisn/unifi
     container_name: unifi
-    hostname: unifi
-    environment:
-      - TZ=UTC
-      - LC_ALL=C.UTF-8
     restart: always
     volumes:
       - ./unifi/config:/usr/lib/unifi/data:rw
@@ -25,7 +21,6 @@ services:
  mongo:
     image: library/mongo
     container_name: mongo
-    hostname: mongo
     command:
       - '--smallfiles'
       - '--storageEngine'

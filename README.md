@@ -19,10 +19,6 @@
 [![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.4.svg)](https://microbadger.com/images/stlouisn/unifi:5.4)
 [![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.4.svg)](https://microbadger.com/images/stlouisn/unifi:5.4)
 
-### Feature Roadmap
-
-- Implement self-signed SSL certificate
-
-### Links
+#### Links
 
 https://community.ubnt.com/unifi/

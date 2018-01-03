@@ -18,25 +18,26 @@ env:
     - UBUNTU_VERSION="`curl -sSL https://raw.githubusercontent.com/tianon/docker-brew-ubuntu-core/master/rolling`"
     - VCS_REF="`git rev-parse --short HEAD`"
     - VCS_URL="`git remote get-url origin | head -c-5`"
+
   matrix:
     - DOCKER_TAG=latest
       DOCKER_VERSION=5.6.29
-      UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.6.29-445c8ce6c7/UniFi.unix.zip
+      DOWNLOAD_URL=https://dl.ubnt.com/unifi/5.6.29-445c8ce6c7/UniFi.unix.zip
     - DOCKER_TAG=stable
       DOCKER_VERSION=5.6.26
-      UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.6.26/UniFi.unix.zip
+      DOWNLOAD_URL=https://dl.ubnt.com/unifi/5.6.26/UniFi.unix.zip
     - DOCKER_TAG=5.4
       DOCKER_VERSION=5.4.19
-      UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.4.19/UniFi.unix.zip
+      DOWNLOAD_URL=https://dl.ubnt.com/unifi/5.4.19/UniFi.unix.zip
     - DOCKER_TAG=5.5
       DOCKER_VERSION=5.5.27
-      UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.5.27-b56dba9184/UniFi.unix.zip
+      DOWNLOAD_URL=https://dl.ubnt.com/unifi/5.5.27-b56dba9184/UniFi.unix.zip
     - DOCKER_TAG=5.6
       DOCKER_VERSION=5.6.29
       UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.6.29-445c8ce6c7/UniFi.unix.zip
     - DOCKER_TAG=5.7
       DOCKER_VERSION=5.7.10
-      UNIFI_DOWNLOAD=https://dl.ubnt.com/unifi/5.7.10-581a7e9158/UniFi.unix.zip
+      DOWNLOAD_URL=https://dl.ubnt.com/unifi/5.7.10-581a7e9158/UniFi.unix.zip
 
 before_install:
   - sudo apt-get update -q
@@ -52,7 +53,7 @@ before_script:
 script:
   - >
     docker build
-    --build-arg UNIFI_DOWNLOAD="${UNIFI_DOWNLOAD}"
+    --build-arg DOWNLOAD_URL="${UNIFI_DOWNLOAD}"
     --label org.label-schema.build-date="${BUILD_DATE}"
     --label org.label-schema.build-number="${BUILD_NUMBER}"
     --label org.label-schema.description="${DOCKER_DESCRIPTION}"

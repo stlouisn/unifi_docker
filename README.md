@@ -3,8 +3,7 @@
 *Network Management Software*
 
 [![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:latest.svg)](https://microbadger.com/images/stlouisn/unifi:latest)
-[![Commit](https://images.microbadger.com/badges/commit/stlouisn/unifi:latest.svg)](https://microbadger.com/images/stlouisn/unifi:latest)
-[![Build](https://travis-ci.org/stlouisn/unifi_docker.svg?branch=master)](https://travis-ci.org/stlouisn/unifi_docker)
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:latest.svg)](https://microbadger.com/images/stlouisn/unifi:5.7)
 
 [![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.7.svg)](https://microbadger.com/images/stlouisn/unifi:5.7)
 [![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.7.svg)](https://microbadger.com/images/stlouisn/unifi:5.7)
@@ -17,6 +16,9 @@
 
 [![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.4.svg)](https://microbadger.com/images/stlouisn/unifi:5.4)
 [![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.4.svg)](https://microbadger.com/images/stlouisn/unifi:5.4)
+
+[![Commit](https://images.microbadger.com/badges/commit/stlouisn/unifi.svg)](https://microbadger.com/images/stlouisn/unifi:latest)
+[![Build](https://travis-ci.org/stlouisn/unifi_docker.svg?branch=master)](https://travis-ci.org/stlouisn/unifi_docker)
 
 #### Links
 

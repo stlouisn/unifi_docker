@@ -6,6 +6,8 @@ ARG DOWNLOAD_URL
 
 RUN \
 
+#######################################################
+
     export DEBIAN_FRONTEND=noninteractive && \
 
     # Update apt-cache
@@ -28,6 +30,8 @@ RUN \
     apt-get install -y --no-install-recommends \
         gosu && \
 
+#######################################################
+
     # Create unifi group
     groupadd \
         --system \
@@ -43,6 +47,8 @@ RUN \
         --gid 9999 \
         --uid 9999 \
         unifi && \
+
+#######################################################
 
     # Install temporary-tools
     apt-get install -y --no-install-recommends \
@@ -69,6 +75,8 @@ RUN \
     # Remove temporary-tools
     apt-get purge -y \
         unzip && \
+
+#######################################################
 
     # Clean apt-cache
     apt-get autoremove -y --purge && \

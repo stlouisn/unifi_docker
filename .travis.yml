@@ -9,7 +9,7 @@ branches:
 env:
   global:
     - BUILD_DATE="`date -u +%Y-%m-%dT%H:%M:%SZ`"
-    - BUILD_NUMBER="${TRAVIS_BUILD_NUMBER}"
+    - BUILD_NUMBER="$TRAVIS_BUILD_NUMBER"
     - DOCKER_DESCRIPTION="network management software"
     - DOCKER_MAINTAINER="stlouisn"
     - DOCKER_NAME="unifi"

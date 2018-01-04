@@ -6,23 +6,26 @@ cp /usr/share/zoneinfo/$TZ /etc/localtime
 echo $TZ > /etc/timezone
 
 # Make sure volumes are mounted correctly
-if [ ! -d /usr/lib/unifi/data ]; then
-    printf "\nERROR: volume /usr/lib/unifi/data not mounted.\n" >&2
+if [[ ! -d /usr/lib/unifi/data ]]; then
+    echo -e "\nError: volume '/usr/lib/unifi/data/' not mounted.\n" >&2
+    exit 1
+elif [[ `mount | grep '/usr/lib/unifi/data' | awk -F '(' {'print $2'} | cut -c -2` == "ro" ]]; then
+    echo -e "\nError: volume '/usr/lib/unifi/data/' is readonly.\n" >&2
     exit 1
 fi
 
 # Copy default system.properties file
-if [ ! -e /usr/lib/unifi/data/system.properties ]; then
+if [[ ! -e /usr/lib/unifi/data/system.properties ]]; then
     cp /etc/unifi/system.properties /usr/lib/unifi/data/.
 fi
 
 # Create default site folder
-if [ ! -d /usr/lib/unifi/data/sites/default ]; then
+if [[ ! -d /usr/lib/unifi/data/sites/default ]]; then
     mkdir -p /usr/lib/unifi/data/sites/default
 fi
 
 # Copy default config.properties file
-if [ ! -e /usr/lib/unifi/data/sites/default/config.properties ]; then
+if [[ ! -e /usr/lib/unifi/data/sites/default/config.properties ]]; then
     cp /etc/unifi/config.properties /usr/lib/unifi/data/sites/default/.
 fi
 

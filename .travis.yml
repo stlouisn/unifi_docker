@@ -29,7 +29,7 @@ env:
         DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.7.12-f5afb57178/UniFi.unix.zip"
     - DOCKER_TAG=5.6
         DOCKER_VERSION=5.6.29
-        UNIFI_DOWNLOAD="https://dl.ubnt.com/unifi/5.6.29-445c8ce6c7/UniFi.unix.zip"
+        DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.6.29-445c8ce6c7/UniFi.unix.zip"
     - DOCKER_TAG=5.5
         DOCKER_VERSION=5.5.27
         DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.5.27-b56dba9184/UniFi.unix.zip"

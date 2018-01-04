@@ -1,11 +1,10 @@
 ### Unifi Docker
 
-*Wireless Controller*
+*Network Management Software*
 
 [![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:latest.svg)](https://microbadger.com/images/stlouisn/unifi:latest)
 [![Commit](https://images.microbadger.com/badges/commit/stlouisn/unifi:latest.svg)](https://microbadger.com/images/stlouisn/unifi:latest)
 [![Build](https://travis-ci.org/stlouisn/unifi_docker.svg?branch=master)](https://travis-ci.org/stlouisn/unifi_docker)
-
 
 [![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.7.svg)](https://microbadger.com/images/stlouisn/unifi:5.7)
 [![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.7.svg)](https://microbadger.com/images/stlouisn/unifi:5.7)

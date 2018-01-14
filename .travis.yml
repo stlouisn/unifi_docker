@@ -10,31 +10,29 @@ env:
   global:
     - BUILD_DATE="`date -u +%Y-%m-%dT%H:%M:%SZ`"
     - BUILD_NUMBER="$TRAVIS_BUILD_NUMBER"
+    - DISTRIB_ID="`(docker pull stlouisn/ubuntu:rolling && docker run -it --rm stlouisn/ubuntu:rolling /bin/bash -c 'cat etc/lsb-release') | grep DISTRIB_ID | awk -F '=' {'print $2'}`"
+    - DISTRIB_RELEASE="`(docker pull stlouisn/ubuntu:rolling && docker run -it --rm stlouisn/ubuntu:rolling /bin/bash -c 'cat etc/lsb-release') | grep DISTRIB_RELEASE | awk -F '=' {'print $2'}`"
+    - DISTRIB_CODENAME="`(docker pull stlouisn/ubuntu:rolling && docker run -it --rm stlouisn/ubuntu:rolling /bin/bash -c 'cat etc/lsb-release') | grep DISTRIB_CODENAME | awk -F '=' {'print $2'}`"
     - DOCKER_DESCRIPTION="network management software"
     - DOCKER_MAINTAINER="stlouisn"
     - DOCKER_NAME="unifi"
     - DOCKER_URL="https://community.ubnt.com/unifi/"
     - SCHEMA_VERSION="1.0"
-    - UBUNTU_VERSION="`curl -s https://raw.githubusercontent.com/tianon/docker-brew-ubuntu-core/master/rolling`"
     - VCS_REF="`git rev-parse --short HEAD`"
     - VCS_URL="`git remote get-url origin | head -c-5`"
-
   matrix:
-    - DOCKER_TAG="latest"
-        DOCKER_VERSION="5.6.26"
-        DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.6.26/UniFi.unix.zip"
     - DOCKER_TAG="5.7"
-        DOCKER_VERSION="5.7.12"
-        DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.7.12-f5afb57178/UniFi.unix.zip"
+      DOCKER_VERSION="5.7.15"
+      DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.7.15-e9b882be05/UniFi.unix.zip"
     - DOCKER_TAG="5.6"
-        DOCKER_VERSION="5.6.29"
-        DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.6.29-445c8ce6c7/UniFi.unix.zip"
+      DOCKER_VERSION="5.6.30"
+      DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.6.30-4a50e978a2/UniFi.unix.zip"
     - DOCKER_TAG="5.5"
-        DOCKER_VERSION="5.5.27"
-        DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.5.27-b56dba9184/UniFi.unix.zip"
+      DOCKER_VERSION="5.5.27"
+      DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.5.27-b56dba9184/UniFi.unix.zip"
     - DOCKER_TAG="5.4"
-        DOCKER_VERSION="5.4.19"
-        DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.4.19/UniFi.unix.zip"
+      DOCKER_VERSION="5.4.19"
+      DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.4.19/UniFi.unix.zip"
 
 before_install:
   - sudo apt-get update -q
@@ -42,10 +40,8 @@ before_install:
   - docker version
 
 install:
-  - chmod 0744 rootfs/usr/local/bin/*.sh
-
-before_script:
   - sed -i -e '/^$/d' -e 's/^[ \t]*//' -e '/^#/d' Dockerfile
+  - chmod 0544 rootfs/usr/local/bin/*.sh
 
 script:
   - >

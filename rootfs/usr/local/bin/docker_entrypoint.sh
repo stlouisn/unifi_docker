@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# Set timezone
-TZ=${TZ:-UTC}
-cp /usr/share/zoneinfo/$TZ /etc/localtime
-echo $TZ > /etc/timezone
-
 # Make sure volumes are mounted correctly
 if [[ ! -d /usr/lib/unifi/data ]]; then
     echo -e "\nError: volume '/usr/lib/unifi/data/' not mounted.\n" >&2

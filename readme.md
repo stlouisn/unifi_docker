@@ -1,6 +1,6 @@
 ### Unifi Docker
 
-*Network Management Software*
+*'Network Management Software'*
 
 [![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.8.svg)](https://microbadger.com/images/stlouisn/unifi:5.8)
 [![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.8.svg)](https://microbadger.com/images/stlouisn/unifi:5.8)
@@ -17,6 +17,4 @@
 [![Commit](https://images.microbadger.com/badges/commit/stlouisn/unifi.svg)](https://microbadger.com/images/stlouisn/unifi:latest)
 [![Build](https://travis-ci.org/stlouisn/unifi_docker.svg?branch=master)](https://travis-ci.org/stlouisn/unifi_docker)
 
-#### Links
-
-https://community.ubnt.com/unifi/
+##### *https://community.ubnt.com/unifi/*

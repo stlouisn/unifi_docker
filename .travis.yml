@@ -1,6 +1,12 @@
 language: bash
 dist: trusty
+group: travis_latest
 sudo: required
+
+addons:
+  apt:
+    packages:
+      - docker-ce
 
 branches:
   only:
@@ -38,18 +44,25 @@ env:
       DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.4.19/UniFi.unix.zip"
 
 before_install:
-  - sudo apt-get update -q
-  - sudo apt-get upgrade -q -y
   - docker version
 
 install:
+  - mkdir -p ./userfs/usr/lib/unifi
+  - curl -L ${DOWNLOAD_URL} -o ./unifi.zip
+  - unzip ./unifi.zip
+  - rm -rf ./UniFi/bin
+  - rm -rf ./UniFi/lib/native/Mac
+  - rm -rf ./UniFi/lib/native/Windows
+  - rm -rf ./UniFi/readme.txt
+  - mv ./UniFi -T ./userfs/usr/lib/unifi
+
+before_script:
   - sed -i -e '/^$/d' -e 's/^[ \t]*//' -e '/^#/d' Dockerfile
   - chmod 0544 rootfs/usr/local/bin/*.sh
 
 script:
   - >
     docker build
-    --build-arg DOWNLOAD_URL="$DOWNLOAD_URL"
     --label org.label-schema.build-date="$BUILD_DATE"
     --label org.label-schema.build-number="$BUILD_NUMBER"
     --label org.label-schema.description="$DOCKER_DESCRIPTION"

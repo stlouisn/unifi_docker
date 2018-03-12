@@ -3,11 +3,19 @@ version: '2.3'
 services:
 
   unifi:
-    image: stlouisn/unifi
+    image: stlouisn/unifi:stable
     container_name: unifi
+    hostname: unifi
+    environment:
+      - TZ=UTC
     restart: always
     volumes:
       - ./unifi/config:/usr/lib/unifi/data:rw
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     depends_on:
       - mongo
     links:
@@ -21,13 +29,22 @@ services:
  mongo:
     image: library/mongo
     container_name: mongo
+    hostname: mongo
+    environment:
+      - TZ=UTC
     command:
       - '--smallfiles'
       - '--storageEngine'
       - 'wiredTiger'
+      - '--bind_ip_all'
     restart: always
     volumes:
       - ./mongo/config:/data/configdb:rw
       - ./mongo/data:/data/db:rw
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     expose:
       - 27017

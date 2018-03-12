@@ -1,36 +1,12 @@
-FROM ubuntu:rolling
+FROM stlouisn/ubuntu:rolling
 
 COPY rootfs /
 
-ARG DOWNLOAD_URL
+#ARG DOWNLOAD_URL
 
 RUN \
 
-#######################################################
-
     export DEBIAN_FRONTEND=noninteractive && \
-
-    # Update apt-cache
-    apt-get update && \
-
-    # Install tzdata
-    apt-get install -y --no-install-recommends \
-        tzdata && \
-
-    # Install SSL
-    apt-get install -y --no-install-recommends \
-        ca-certificates \
-        openssl && \
-
-    # Install curl
-    apt-get install -y --no-install-recommends \
-        curl && \
-
-    # Install gosu
-    apt-get install -y --no-install-recommends \
-        gosu && \
-
-#######################################################
 
     # Create unifi group
     groupadd \
@@ -48,35 +24,34 @@ RUN \
         --uid 9999 \
         unifi && \
 
-#######################################################
+    # Update apt-cache
+    apt-get update && \
 
-    # Install temporary-tools
-    apt-get install -y --no-install-recommends \
-        unzip && \
+#    # Install temporary-tools
+#    apt-get install -y --no-install-recommends \
+#        unzip && \
 
     # Install Java
     apt-get install -y --no-install-recommends \
         default-jre-headless && \
 
-    # Install unifi
-    curl -SL $DOWNLOAD_URL -o /tmp/unifi.zip && \
-    unzip /tmp/unifi.zip -d /tmp/ && \
-    mv /tmp/UniFi /usr/lib/unifi && \
-    chown -R unifi:unifi /usr/lib/unifi && \
+#    # Install unifi
+#    curl -SL $DOWNLOAD_URL -o /tmp/unifi.zip && \
+#    unzip /tmp/unifi.zip -d /tmp/ && \
+#    mv /tmp/UniFi /usr/lib/unifi && \
+#    chown -R unifi:unifi /usr/lib/unifi && \
 
-    # Remove unnecessary files
-    rm -rf \
-        /usr/lib/unifi/bin \
-        /usr/lib/unifi/lib/native/Linux/armhf \
-        /usr/lib/unifi/lib/native/Mac \
-        /usr/lib/unifi/lib/native/Windows \
-        /usr/lib/unifi/readme.txt && \
+#    # Remove unnecessary files
+#    rm -rf \
+#        /usr/lib/unifi/bin \
+#        /usr/lib/unifi/lib/native/Linux/armhf \
+#        /usr/lib/unifi/lib/native/Mac \
+#        /usr/lib/unifi/lib/native/Windows \
+#        /usr/lib/unifi/readme.txt && \
 
-    # Remove temporary-tools
-    apt-get purge -y \
-        unzip && \
-
-#######################################################
+#    # Remove temporary-tools
+#    apt-get purge -y \
+#        unzip && \
 
     # Clean apt-cache
     apt-get autoremove -y --purge && \
@@ -90,6 +65,8 @@ RUN \
         /var/lib/apt/lists/*
 
 ENV JAVA_HOME=/usr/lib/jvm/default-java/jre
+
+#COPY --chown=unifi:unifi userfs /
 
 VOLUME /usr/lib/unifi/data
 

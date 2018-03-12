@@ -47,10 +47,12 @@ install:
   - mkdir -p ./userfs/usr/lib/unifi
   - curl -L $DOWNLOAD_URL -o ./unifi.zip
   - unzip ./unifi.zip
-  - rm -rf ./UniFi/bin
-  - rm -rf ./UniFi/lib/native/Mac
-  - rm -rf ./UniFi/lib/native/Windows
-  - rm -rf ./UniFi/readme.txt
+  - >
+    rm -rf
+    ./UniFi/bin
+    ./UniFi/lib/native/Mac
+    ./UniFi/lib/native/Windows
+    ./UniFi/readme.txt
   - mv ./UniFi -T ./userfs/usr/lib/unifi
 
 before_script:
@@ -75,11 +77,11 @@ script:
 
 after_script:
   - |
-    if [[ $DOCKER_TAG == "5.8" ]]; then
+    if [[ "$DOCKER_TAG" == "5.8" ]]; then
       docker tag ${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_TAG} ${DOCKER_USERNAME}/${DOCKER_NAME}:testing
     fi
   - |
-    if [[ $DOCKER_TAG == "5.7" ]]; then
+    if [[ "$DOCKER_TAG" == "5.7" ]]; then
       docker tag ${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_TAG} ${DOCKER_USERNAME}/${DOCKER_NAME}:stable
     fi
 

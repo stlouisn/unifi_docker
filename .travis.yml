@@ -34,21 +34,18 @@ env:
       DOCKER_VERSION="5.7.20"
       DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.7.20-4f3333649b/UniFi.unix.zip"
     - DOCKER_TAG="5.6"
-      DOCKER_VERSION="5.6.35"
-      DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.6.35-cbc0f14bcb/UniFi.unix.zip"
+      DOCKER_VERSION="5.6.36"
+      DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.6.36-84743cef67/UniFi.unix.zip"
     - DOCKER_TAG="5.5"
       DOCKER_VERSION="5.5.24"
       DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.5.24/UniFi.unix.zip"
-    - DOCKER_TAG="5.4"
-      DOCKER_VERSION="5.4.19"
-      DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.4.19/UniFi.unix.zip"
 
 before_install:
   - docker version
 
 install:
   - mkdir -p ./userfs/usr/lib/unifi
-  - curl -L ${DOWNLOAD_URL} -o ./unifi.zip
+  - curl -L $DOWNLOAD_URL -o ./unifi.zip
   - unzip ./unifi.zip
   - rm -rf ./UniFi/bin
   - rm -rf ./UniFi/lib/native/Mac
@@ -75,6 +72,16 @@ script:
     --label org.label-schema.vcs-url="$VCS_URL"
     --tag ${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_TAG}
     --pull .
+
+after_script:
+  - |
+    if [[ $DOCKER_TAG == "5.8" ]]; then
+      docker tag ${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_TAG} ${DOCKER_USERNAME}/${DOCKER_NAME}:testing
+    fi
+  - |
+    if [[ $DOCKER_TAG == "5.7" ]]; then
+      docker tag ${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_TAG} ${DOCKER_USERNAME}/${DOCKER_NAME}:stable
+    fi
 
 after_success:
   - echo ${DOCKER_PASSWORD} | docker login --username ${DOCKER_USERNAME} --password-stdin

@@ -1,4 +1,4 @@
-FROM stlouisn/java:8
+FROM stlouisn/java:default
 
 COPY rootfs /
 
@@ -20,7 +20,7 @@ RUN \
         --comment unifi \
         --gid 9999 \
         --uid 9999 \
-        unifi && \
+        unifi
 
 COPY --chown=unifi:unifi userfs /
 

@@ -27,10 +27,7 @@ env:
     - VCS_REF="`git rev-parse --short HEAD`"
     - VCS_URL="`git remote get-url origin | head -c-5`"
   matrix:
-    - DOCKER_TAG="testing"
-      DOCKER_VERSION="5.8.3"
-      DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.8.3-b2ba2c5d3a/UniFi.unix.zip"
-    - DOCKER_TAG="stable"
+    - DOCKER_TAG="latest"
       DOCKER_VERSION="5.7.20"
       DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.7.20-4f3333649b/UniFi.unix.zip"
     - DOCKER_TAG="5.8"

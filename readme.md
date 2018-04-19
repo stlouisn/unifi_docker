@@ -2,6 +2,9 @@
 
 *'Network Management Software'*
 
+[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:latest.svg)](https://microbadger.com/images/stlouisn/unifi:latest)
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:latest.svg)](https://microbadger.com/images/stlouisn/unifi:latest)
+
 [![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.8.svg)](https://microbadger.com/images/stlouisn/unifi:5.8)
 [![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.8.svg)](https://microbadger.com/images/stlouisn/unifi:5.8)
 

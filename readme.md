@@ -1,4 +1,4 @@
-## Unifi Network Management - CaaS
+## Unifi Network Management
 
 [![Build](https://travis-ci.org/stlouisn/unifi_docker.svg?branch=master)](https://travis-ci.org/stlouisn/unifi_docker)
 [![Docker Pulls](https://img.shields.io/docker/pulls/stlouisn/unifi.svg)](https://hub.docker.com/r/stlouisn/unifi/)

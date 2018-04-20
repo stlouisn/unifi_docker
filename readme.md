@@ -3,7 +3,9 @@
 [![Build](https://travis-ci.org/stlouisn/unifi_docker.svg?branch=master)](https://travis-ci.org/stlouisn/unifi_docker)
 [![Docker Pulls](https://img.shields.io/docker/pulls/stlouisn/unifi.svg)](https://hub.docker.com/r/stlouisn/unifi/)
 
-[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:latest.svg)](https://microbadger.com/images/stlouisn/unifi:latest)
+## Tags
+
+[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:latest.svg)](https://microbadger.com/images/stlouisn/unifi:latest "test")
 [![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:latest.svg)](https://microbadger.com/images/stlouisn/unifi:latest)
 
 [![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.8.svg)](https://microbadger.com/images/stlouisn/unifi:5.8)
@@ -22,7 +24,7 @@
 
 [![Feature Requests](http://feathub.com/stlouisn/unifi_docker?format=svg)](http://feathub.com/stlouisn/unifi_docker)
 
-## Information
+## Links
 
 *https://community.ubnt.com/unifi/*
 

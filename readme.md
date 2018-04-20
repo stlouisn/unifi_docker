@@ -1,9 +1,9 @@
 ### Unifi Docker
-[![Commit](https://images.microbadger.com/badges/commit/stlouisn/unifi.svg)](https://microbadger.com/images/stlouisn/unifi:latest)
-[![Build](https://travis-ci.org/stlouisn/unifi_docker.svg?branch=master)](https://travis-ci.org/stlouisn/unifi_docker)
-![Docker Pulls](https://img.shields.io/docker/pulls/stlouisn/unifi.svg)
 
 *'Network Management Software'*
+
+[![Build](https://travis-ci.org/stlouisn/unifi_docker.svg?branch=master)](https://travis-ci.org/stlouisn/unifi_docker)
+![Docker Pulls](https://img.shields.io/docker/pulls/stlouisn/unifi.svg)
 
 [![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:latest.svg)](https://microbadger.com/images/stlouisn/unifi:latest)
 [![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:latest.svg)](https://microbadger.com/images/stlouisn/unifi:latest)

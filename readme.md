@@ -1,4 +1,4 @@
-## Unifi Network Management
+## Unifi Controller
 
 [![Build](https://travis-ci.org/stlouisn/unifi_docker.svg?branch=master)](https://travis-ci.org/stlouisn/unifi_docker)
 [![Docker Pulls](https://img.shields.io/docker/pulls/stlouisn/unifi.svg)](https://hub.docker.com/r/stlouisn/unifi/)
@@ -18,4 +18,12 @@
 [![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.5.svg)](https://microbadger.com/images/stlouisn/unifi:5.5)
 [![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.5.svg)](https://microbadger.com/images/stlouisn/unifi:5.5)
 
-##### *https://community.ubnt.com/unifi/*  &nbsp;&nbsp;&nbsp;&nbsp;   *[https://help.ubnt.com/current-controller-versions](https://help.ubnt.com/hc/en-us/articles/115000441548-UniFi-Current-Controller-Versions)*
+## Feature Requests
+
+[![Feature Requests](http://feathub.com/stlouisn/unifi_docker?format=svg)](http://feathub.com/stlouisn/unifi_docker)
+
+## Information
+
+*https://community.ubnt.com/unifi/*
+
+*[https://help.ubnt.com/current-controller-versions](https://help.ubnt.com/hc/en-us/articles/115000441548-UniFi-Current-Controller-Versions)*

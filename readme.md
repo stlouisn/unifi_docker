@@ -13,8 +13,11 @@ Unifi is...
 
 ### Tags
 
-[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:latest.svg)](https://microbadger.com/images/stlouisn/unifi:latest)
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:latest.svg)](https://microbadger.com/images/stlouisn/unifi:latest)
+[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:stable.svg)](https://microbadger.com/images/stlouisn/unifi:stable)
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:stable.svg)](https://microbadger.com/images/stlouisn/unifi:stable)
+
+[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:testing.svg)](https://microbadger.com/images/stlouisn/unifi:testing)
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:testing.svg)](https://microbadger.com/images/stlouisn/unifi:testing)
 
 [![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.8.svg)](https://microbadger.com/images/stlouisn/unifi:5.8)
 [![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.8.svg)](https://microbadger.com/images/stlouisn/unifi:5.8)

@@ -1,16 +1,9 @@
 [travis_logo]: https://travis-ci.org/stlouisn/unifi_docker.svg?branch=master
 [travis_url]: https://travis-ci.org/stlouisn/unifi_docker
-[docker_pulls_logo]: https://img.shields.io/docker/pulls/stlouisn/unifi.svg
 [docker_stars_logo]: https://img.shields.io/docker/stars/stlouisn/unifi.svg
+[docker_pulls_logo]: https://img.shields.io/docker/pulls/stlouisn/unifi.svg
 [docker_hub_url]: https://hub.docker.com/r/stlouisn/unifi
-
-[microbadger_stable_url]: https://microbadger.com/images/stlouisn/unifi:stable
-[microbadger_testing_url]: https://microbadger.com/images/stlouisn/unifi:testing
-[microbadger_5.8_url]: https://microbadger.com/images/stlouisn/unifi:5.8
-[microbadger_5.7_url]: https://microbadger.com/images/stlouisn/unifi:5.7
-[microbadger_5.6_url]: https://microbadger.com/images/stlouisn/unifi:5.6
-[microbadger_5.5_url]: https://microbadger.com/images/stlouisn/unifi:5.5
-
+[microbadger_url]: https://microbadger.com/images/stlouisn/unifi
 [feathub_data]: http://feathub.com/stlouisn/unifi_docker?format=svg
 [feathub_url]: http://feathub.com/stlouisn/unifi_docker
 [issues_url]: https://github.com/stlouisn/unifi_docker/issues
@@ -26,23 +19,23 @@ Unifi Controller is a wireless network management software used to manage and co
 
 ### Tags
 
-[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:stable.svg)][microbadger_stable_url]
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:stable.svg)][microbadger_stable_url]
+[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:stable.svg)][microbadger_url]
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:stable.svg)][microbadger_url]
 
-[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:testing.svg)][microbadger_testing_url]
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:testing.svg)][microbadger_testing_url]
+[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:testing.svg)][microbadger_url]
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:testing.svg)][microbadger_url]
 
-[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.8.svg)][microbadger_5.8_url]
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.8.svg)][microbadger_5.8_url]
+[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.8.svg)][microbadger_url]
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.8.svg)][microbadger_url]
 
-[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.7.svg)][microbadger_5.7_url]
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.7.svg)][microbadger_5.7_url]
+[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.7.svg)][microbadger_url]
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.7.svg)][microbadger_url]
 
-[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.6.svg)][microbadger_5.6_url]
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.6.svg)][microbadger_5.6_url]
+[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.6.svg)][microbadger_url]
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.6.svg)][microbadger_url]
 
-[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.5.svg)][microbadger_5.5_url]
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.5.svg)][microbadger_5.5_url]
+[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.5.svg)][microbadger_url]
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.5.svg)][microbadger_url]
 
 ### Usage
 

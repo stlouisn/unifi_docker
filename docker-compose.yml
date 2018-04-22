@@ -8,6 +8,7 @@ services:
     hostname: unifi
     environment:
       - TZ=UTC
+      - LC_ALL=C.UTF-8
     restart: always
     volumes:
       - /docker/unifi/config:/usr/lib/unifi/data:rw
@@ -32,6 +33,7 @@ services:
     hostname: mongo
     environment:
       - TZ=UTC
+      - LC_ALL=C.UTF-8
     command:
       - '--smallfiles'
       - '--storageEngine'

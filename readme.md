@@ -8,13 +8,19 @@
 [travis_icon]: https://travis-ci.org/stlouisn/unifi_docker.svg?branch=master
 [travis_url]: https://travis-ci.org/stlouisn/unifi_docker
 
-## Unifi Docker
+## UniFi Docker
 
-[![Build][travis_icon]][travis_url]
+[![Build Status][travis_icon]][travis_url]
 [![Docker Stars][docker_stars]][docker_url]
 [![Docker Pulls][docker_pulls]][docker_url]
 
-Unifi is...
+Unifi 
+
+The UniFi controller software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance
+
+The UniFi Controller is a wireless network management
+software solution from Ubiquiti Networks™. It allows you to
+manage multiple wireless networks using a web browser
 
 ### Tags
 
@@ -37,7 +43,7 @@ Unifi is...
 [![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.5.svg)](https://microbadger.com/images/stlouisn/unifi:5.5)
 
 
-### Running
+### Usage
 
 ```
 docker run

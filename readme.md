@@ -1,47 +1,48 @@
+[travis_logo]: https://travis-ci.org/stlouisn/unifi_docker.svg?branch=master
+[travis_url]: https://travis-ci.org/stlouisn/unifi_docker
+[docker_pulls_logo]: https://img.shields.io/docker/pulls/stlouisn/unifi.svg
+[docker_stars_logo]: https://img.shields.io/docker/stars/stlouisn/unifi.svg
+[docker_hub_url]: https://hub.docker.com/r/stlouisn/unifi
+
+[microbadger_stable_url]: https://microbadger.com/images/stlouisn/unifi:stable
+[microbadger_testing_url]: https://microbadger.com/images/stlouisn/unifi:testing
+[microbadger_5.8_url]: https://microbadger.com/images/stlouisn/unifi:5.8
+[microbadger_5.7_url]: https://microbadger.com/images/stlouisn/unifi:5.7
+[microbadger_5.6_url]: https://microbadger.com/images/stlouisn/unifi:5.6
+[microbadger_5.5_url]: https://microbadger.com/images/stlouisn/unifi:5.5
+
 [feathub_data]: http://feathub.com/stlouisn/unifi_docker?format=svg
 [feathub_url]: http://feathub.com/stlouisn/unifi_docker
-[docker_pulls]: https://img.shields.io/docker/pulls/stlouisn/unifi.svg
-[docker_stars]: https://img.shields.io/docker/stars/stlouisn/unifi.svg
-[docker_url]: https://hub.docker.com/r/stlouisn/unifi
 [issues_url]: https://github.com/stlouisn/unifi_docker/issues
 [slack_url]: https://stlouisn.slack.com/messages/CAB1ASU9H
-[travis_icon]: https://travis-ci.org/stlouisn/unifi_docker.svg?branch=master
-[travis_url]: https://travis-ci.org/stlouisn/unifi_docker
 
-## UniFi Docker
+## UniFi Controller Docker
 
-[![Build Status][travis_icon]][travis_url]
-[![Docker Stars][docker_stars]][docker_url]
-[![Docker Pulls][docker_pulls]][docker_url]
+[![Build Status][travis_logo]][travis_url]
+[![Docker Stars][docker_stars_logo]][docker_hub_url]
+[![Docker Pulls][docker_pulls_logo]][docker_hub_url]
 
-Unifi 
-
-The UniFi controller software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance
-
-The UniFi Controller is a wireless network management
-software solution from Ubiquiti Networks™. It allows you to
-manage multiple wireless networks using a web browser
+Unifi Controller is a wireless network management software used to manage and control Ubiquiti Networks wireless devices using a web browser.
 
 ### Tags
 
-[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:stable.svg)](https://microbadger.com/images/stlouisn/unifi:stable)
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:stable.svg)](https://microbadger.com/images/stlouisn/unifi:stable)
+[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:stable.svg)][microbadger_stable_url]
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:stable.svg)][microbadger_stable_url]
 
-[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:testing.svg)](https://microbadger.com/images/stlouisn/unifi:testing)
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:testing.svg)](https://microbadger.com/images/stlouisn/unifi:testing)
+[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:testing.svg)][microbadger_testing_url]
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:testing.svg)][microbadger_testing_url]
 
-[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.8.svg)](https://microbadger.com/images/stlouisn/unifi:5.8)
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.8.svg)](https://microbadger.com/images/stlouisn/unifi:5.8)
+[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.8.svg)][microbadger_5.8_url]
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.8.svg)][microbadger_5.8_url]
 
-[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.7.svg)](https://microbadger.com/images/stlouisn/unifi:5.7)
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.7.svg)](https://microbadger.com/images/stlouisn/unifi:5.7)
+[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.7.svg)][microbadger_5.7_url]
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.7.svg)][microbadger_5.7_url]
 
-[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.6.svg)](https://microbadger.com/images/stlouisn/unifi:5.6)
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.6.svg)](https://microbadger.com/images/stlouisn/unifi:5.6)
+[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.6.svg)][microbadger_5.6_url]
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.6.svg)][microbadger_5.6_url]
 
-[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.5.svg)](https://microbadger.com/images/stlouisn/unifi:5.5)
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.5.svg)](https://microbadger.com/images/stlouisn/unifi:5.5)
-
+[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.5.svg)][microbadger_5.5_url]
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.5.svg)][microbadger_5.5_url]
 
 ### Usage
 

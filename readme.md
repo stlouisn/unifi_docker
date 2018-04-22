@@ -1,13 +1,18 @@
+[feathub_data]: http://feathub.com/stlouisn/unifi_docker?format=svg
+[feathub_url]: http://feathub.com/stlouisn/unifi_docker
+[docker_pulls]: https://img.shields.io/docker/pulls/stlouisn/unifi.svg
+[docker_stars]: https://img.shields.io/docker/stars/stlouisn/unifi.svg
+[docker_url]: https://hub.docker.com/r/stlouisn/unifi
 [issues_url]: https://github.com/stlouisn/unifi_docker/issues
 [slack_url]: https://stlouisn.slack.com/messages/CAB1ASU9H
-[features_data]: http://feathub.com/stlouisn/unifi_docker?format=svg
-[features_url]: http://feathub.com/stlouisn/unifi_docker
+[travis_icon]: https://travis-ci.org/stlouisn/unifi_docker.svg?branch=master
+[travis_url]: https://travis-ci.org/stlouisn/unifi_docker
 
 ## Unifi Docker
 
-[![Build](https://travis-ci.org/stlouisn/unifi_docker.svg?branch=master)](https://travis-ci.org/stlouisn/unifi_docker)
-[![Docker Stars](https://img.shields.io/docker/stars/stlouisn/unifi.svg)](https://hub.docker.com/r/stlouisn/unifi/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/stlouisn/unifi.svg)](https://hub.docker.com/r/stlouisn/unifi/)
+[![Build][travis_icon]][travis_url]
+[![Docker Stars][docker_stars]][docker_url]
+[![Docker Pulls][docker_pulls]][docker_url]
 
 Unifi is...
 
@@ -45,7 +50,7 @@ docker run
 
 ### Feature Requests
 
-[![Feature Requests][features_data]][features_url]
+[![Feature Requests][feathub_data]][feathub_url]
 
 ### Support
 

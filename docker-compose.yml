@@ -10,7 +10,7 @@ services:
       - TZ=UTC
     restart: always
     volumes:
-      - ./unifi/config:/usr/lib/unifi/data:rw
+      - /docker/unifi/config:/usr/lib/unifi/data:rw
     logging:
       driver: json-file
       options:
@@ -39,8 +39,8 @@ services:
       - '--bind_ip_all'
     restart: always
     volumes:
-      - ./mongo/config:/data/configdb:rw
-      - ./mongo/data:/data/db:rw
+      - /docker/mongo/config:/data/configdb:rw
+      - /docker/mongo/data:/data/db:rw
     logging:
       driver: json-file
       options:

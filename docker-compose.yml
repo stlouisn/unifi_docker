@@ -1,4 +1,4 @@
-version: '2.3'
+version: '2.4'
 
 services:
 
@@ -18,7 +18,8 @@ services:
         max-size: "10m"
         max-file: "3"
     depends_on:
-      - mongo
+      mongo:
+        condition: service_started
     links:
       - mongo:mongo
     ports:

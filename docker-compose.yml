@@ -11,7 +11,7 @@ services:
       - LC_ALL=C.UTF-8
     restart: always
     volumes:
-      - /docker/unifi/config:/usr/lib/unifi/data:rw
+      - ./unifi/config:/usr/lib/unifi/data:rw
     logging:
       driver: json-file
       options:
@@ -42,8 +42,8 @@ services:
       - '--bind_ip_all'
     restart: always
     volumes:
-      - /docker/mongo/config:/data/configdb:rw
-      - /docker/mongo/data:/data/db:rw
+      - ./mongo/config:/data/configdb:rw
+      - ./mongo/data:/data/db:rw
     logging:
       driver: json-file
       options:

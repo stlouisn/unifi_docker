@@ -40,14 +40,6 @@ Unifi Controller is a wireless network management software used to manage and co
 [![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.5.svg)][microbadger_url]
 [![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.5.svg)][microbadger_url]
 
-### Usage
-
-```
-cd /docker/unifi
-curl --silent --show-error --output docker-compose.yml https://raw.githubusercontent.com/stlouisn/unifi_docker/master/docker-compose.yml
-docker-compose up --detach --build --remove-orphans
-```
-
 ### Feature Requests
 
 [![Feature Requests][feathub_data]][feathub_url]

@@ -7,7 +7,7 @@
 [feathub_data]: http://feathub.com/stlouisn/unifi_docker?format=svg
 [feathub_url]: http://feathub.com/stlouisn/unifi_docker
 [issues_url]: https://github.com/stlouisn/unifi_docker/issues
-[slack_url]: https://stlouisn.slack.com/messages/CAB1ASU9H
+[slack_url]: https://stlouisn.slack.com/messages/CBRNYGY3V
 
 ## UniFi Controller Docker
 

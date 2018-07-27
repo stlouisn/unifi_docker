@@ -82,11 +82,11 @@ script:
 after_success:
   - echo ${DOCKER_PASSWORD} | docker login --username ${DOCKER_USERNAME} --password-stdin
   - docker push ${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_TAG}
-  - if [ "${UNIFI_TESTING}" == "${DOCKER_TAG}" ]; then
+  - if [ "${DOCKER_TAG}" == "${UNIFI_TESTING}" ]; then
     docker tag ${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_TAG} ${DOCKER_USERNAME}/${DOCKER_NAME}:testing;
     docker push ${DOCKER_USERNAME}/${DOCKER_NAME}:testing;
     fi
-  - if [ "${UNIFI_STABLE}" == "${DOCKER_TAG}" ]; then
+  - if [ "${DOCKER_TAG}" == "${UNIFI_STABLE}" ]; then
     docker tag ${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_TAG} ${DOCKER_USERNAME}/${DOCKER_NAME}:stable;
     docker push ${DOCKER_USERNAME}/${DOCKER_NAME}:stable;
     fi

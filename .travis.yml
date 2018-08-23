@@ -30,8 +30,8 @@ env:
     - UNIFI_STABLE="5.8"
   matrix:
     - DOCKER_TAG="5.9"
-      DOCKER_VERSION="5.9.22"
-      DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.9.22-d2a4718971/UniFi.unix.zip"
+      DOCKER_VERSION="5.9.24"
+      DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.9.24-64c9fed777/UniFi.unix.zip"
     - DOCKER_TAG="5.8"
       DOCKER_VERSION="5.8.28"
       DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.8.28/UniFi.unix.zip"

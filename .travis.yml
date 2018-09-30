@@ -28,16 +28,17 @@ env:
     - VCS_URL="`git remote get-url origin | head -c-5`"
     - UNIFI_TESTING="5.9"
     - UNIFI_STABLE="5.8"
+    - UNIFI_LTS="5.6"
   matrix:
     - DOCKER_TAG="5.9"
-      DOCKER_VERSION="5.9.26"
-      DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.9.26-25460f7409/UniFi.unix.zip"
+      DOCKER_VERSION="5.9.29"
+      DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.9.29-04b5d20997/UniFi.unix.zip"
     - DOCKER_TAG="5.8"
       DOCKER_VERSION="5.8.30"
       DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.8.30/UniFi.unix.zip"
     - DOCKER_TAG="5.7"
-      DOCKER_VERSION="5.7.28"
-      DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.7.28-5c442c6b54/UniFi.unix.zip"
+      DOCKER_VERSION="5.7.23"
+      DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.7.23/UniFi.unix.zip"
     - DOCKER_TAG="5.6"
       DOCKER_VERSION="5.6.40"
       DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.6.40/UniFi.unix.zip"
@@ -89,6 +90,10 @@ after_success:
   - if [ "${DOCKER_TAG}" == "${UNIFI_STABLE}" ]; then
     docker tag ${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_TAG} ${DOCKER_USERNAME}/${DOCKER_NAME}:stable;
     docker push ${DOCKER_USERNAME}/${DOCKER_NAME}:stable;
+    fi
+  - if [ "${DOCKER_TAG}" == "${UNIFI_LTS}" ]; then
+    docker tag ${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_TAG} ${DOCKER_USERNAME}/${DOCKER_NAME}:lts;
+    docker push ${DOCKER_USERNAME}/${DOCKER_NAME}:lts;
     fi
 
 notifications:

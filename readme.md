@@ -19,6 +19,9 @@ Unifi Controller is a wireless network management software used to manage and co
 
 ### Tags
 
+[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:lts.svg)][microbadger_url]
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:lts.svg)][microbadger_url]
+
 [![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:stable.svg)][microbadger_url]
 [![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:stable.svg)][microbadger_url]
 

@@ -9,13 +9,13 @@
 [issues_url]: https://github.com/stlouisn/unifi_docker/issues
 [slack_url]: https://stlouisn.slack.com/messages/CBRNYGY3V
 
-## UniFi Controller Docker
+## UniFi Wireless Controller Docker
 
 [![Build Status][travis_logo]][travis_url]
 [![Docker Stars][docker_stars_logo]][docker_hub_url]
 [![Docker Pulls][docker_pulls_logo]][docker_hub_url]
 
-Unifi Controller is a wireless network management software used to manage and control Ubiquiti Networks wireless devices using a web browser.
+Unifi Controller is a network management software used to manage and control Ubiquiti Networks wireless devices using a web browser.
 
 ### Tags
 

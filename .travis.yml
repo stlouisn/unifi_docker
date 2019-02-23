@@ -3,22 +3,21 @@ dist: trusty
 group: travis_latest
 sudo: required
 
+if: |
+  branch = master AND \
+  ! commit_message =~ /readme.md/ AND \
+  ! commit_message =~ /docker-compose.yml/ OR \
+  type = cron
+
 addons:
   apt:
     packages:
       - docker-ce
 
-branches:
-  only:
-    - master
-
 env:
   global:
-    - BUILD_DATE="`date -u +%Y-%m-%dT%H:%M:%SZ`"
-    - BUILD_NUMBER="$TRAVIS_BUILD_NUMBER"
-    - DISTRIB_ID="`(docker pull stlouisn/ubuntu:rolling && docker run -it --rm stlouisn/ubuntu:rolling /bin/bash -c 'cat /etc/lsb-release') | grep DISTRIB_ID | awk -F '=' {'print $2'}`"
-    - DISTRIB_RELEASE="`(docker pull stlouisn/ubuntu:rolling && docker run -it --rm stlouisn/ubuntu:rolling /bin/bash -c 'cat /etc/lsb-release') | grep DISTRIB_RELEASE | awk -F '=' {'print $2'}`"
-    - DISTRIB_CODENAME="`(docker pull stlouisn/ubuntu:rolling && docker run -it --rm stlouisn/ubuntu:rolling /bin/bash -c 'cat /etc/lsb-release') | grep DISTRIB_CODENAME | awk -F '=' {'print $2'}`"
+    - BUILD_DATE="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+    - BUILD_NUMBER="${TRAVIS_BUILD_NUMBER}"
     - DOCKER_DESCRIPTION="network management software"
     - DOCKER_MAINTAINER="stlouisn"
     - DOCKER_NAME="unifi"
@@ -31,8 +30,8 @@ env:
     - UNIFI_LTS="5.6"
   matrix:
     - DOCKER_TAG="5.10"
-      DOCKER_VERSION="5.10.12"
-      DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.10.12-20644d4901/UniFi.unix.zip"
+      DOCKER_VERSION="5.10.19"
+      DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.10.19-113b57454f/UniFi.unix.zip"
     - DOCKER_TAG="5.9"
       DOCKER_VERSION="5.9.32"
       DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.9.32-016da0b7c1/UniFi.unix.zip"
@@ -65,7 +64,7 @@ install:
 
 before_script:
   - sed -i -e '/^$/d' -e 's/^[ \t]*//' -e '/^#/d' Dockerfile
-  - chmod 0544 rootfs/usr/local/bin/*.sh
+  - chmod 0544 rootfs/usr/local/bin/docker_entrypoint.sh
 
 script:
   - >

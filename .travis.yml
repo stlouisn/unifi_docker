@@ -30,8 +30,6 @@ env:
       DOCKER_VERSION="$(curl -ksSL https://help.ubnt.com/hc/en-us/articles/360008240754#1 | grep '[0-9]-Stable-has-been' | grep -o '>[0-9]\?[0-9].[0-9]\?[0-9].[0-9]\?[0-9]' | cut -c 2- | sort | tail -n 1)"
     - DOCKER_TAG="lts"
       DOCKER_VERSION="$(curl -ksSL https://help.ubnt.com/hc/en-us/articles/360008240754#1 | grep '[0-9]-LTS-Stable-has-been' | grep -o '>[0-9]\?[0-9].[0-9]\?[0-9].[0-9]\?[0-9]' | cut -c 2- | sort | tail -n 1)"
-    - DOCKER_TAG="latest"
-      DOCKER_VERSION="$(curl -ksSL https://help.ubnt.com/hc/en-us/articles/360008240754#1 | grep '[0-9]-Unstable-has-been' | grep -o '>[0-9]\?[0-9].[0-9]\?[0-9].[0-9]\?[0-9]' | cut -c 2- | sort | tail -n 1)"
 
 before_install:
   - sudo /sbin/sysctl -w net.ipv4.conf.all.forwarding=1

@@ -19,32 +19,8 @@ Unifi Controller is a network management software used to manage and control Ubi
 
 ### Tags
 
-[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:lts.svg)][microbadger_url]
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:lts.svg)][microbadger_url]
-
 [![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:stable.svg)][microbadger_url]
 [![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:stable.svg)][microbadger_url]
-
-[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:testing.svg)][microbadger_url]
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:testing.svg)][microbadger_url]
-
-[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.10.svg)][microbadger_url]
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.10.svg)][microbadger_url]
-
-[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.9.svg)][microbadger_url]
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.9.svg)][microbadger_url]
-
-[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.8.svg)][microbadger_url]
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.8.svg)][microbadger_url]
-
-[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.7.svg)][microbadger_url]
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.7.svg)][microbadger_url]
-
-[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.6.svg)][microbadger_url]
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.6.svg)][microbadger_url]
-
-[![Version](https://images.microbadger.com/badges/version/stlouisn/unifi:5.5.svg)][microbadger_url]
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/unifi:5.5.svg)][microbadger_url]
 
 ### Feature Requests
 

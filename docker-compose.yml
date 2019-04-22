@@ -12,6 +12,13 @@ services:
     restart: always
     volumes:
       - /docker/unifi/config:/usr/lib/unifi/data:rw
+    mem_limit: 500M
+    memswap_limit: 500M
+    logging:
+      driver: json-file
+        options:
+          max-size: "10M"
+          max-file: "3"
     depends_on:
       mongo:
         condition: service_started
@@ -22,7 +29,7 @@ services:
       - 8880
 
  mongo:
-    image: library/mongo
+    image: library/mongo:latest
     container_name: mongo
     hostname: mongo
     environment:
@@ -37,5 +44,12 @@ services:
     volumes:
       - /docker/mongo/config:/data/configdb:rw
       - /docker/mongo/data:/data/db:rw
+    mem_limit: 500M
+    memswap_limit: 500M
+    logging:
+      driver: json-file
+        options:
+          max-size: "10M"
+          max-file: "3"
     expose:
       - 27017

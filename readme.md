@@ -38,4 +38,4 @@ Unifi Controller is a network management software used to manage and control Ubi
 
 *https://community.ubnt.com/unifi/*
 
-*[https://www.ui.com/download/unifi](https://www.ui.com/download/unifi/default/default/unifi_sysvinit_alldeb/)*
+*[https://www.ui.com/download/unifi/](https://www.ui.com/download/unifi/default/default/unifi_sysvinit_alldeb/)*
